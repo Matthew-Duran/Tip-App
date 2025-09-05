@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container min-vh-100 d-flex justify-content-center align-items-center">
+        <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
+            <h1 class="text-center mb-3">Risotto House Tip Calculator</h1>
+            <h2 class="text-center mb-3">Please Log in</h2>
+<!-- Error -->
+    <div th:if="${param.error}" class="alert-danger" role="alert">
+        Invalid username and password.
+        <br>
+        Hint: Username: risotto, Password: password
+
+    </div>
+
+<!-- Logout -->
+    <div th:if="${param.logout}" class="alert-success" role="alert">
+        You have been logged out.
+    </div>
+
+<!-- form -->
+<form th:action="@{/login}" method="post">
+    <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input type="text" id="username" name="username"
+               class="form-control" required autofocus>
+    </div>
+
+    <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" id="password" name="password"
+               class="form-control" required>
+    </div>
+
+    <button type="submit" value ="Sign In" class="btn btn-primary w-100">Login</button>
+    </form>
+        </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

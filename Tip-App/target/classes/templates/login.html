@@ -13,15 +13,18 @@
             <h1 class="text-center mb-3">Risotto House Tip Calculator</h1>
             <h2 class="text-center mb-3">Please Log in</h2>
 <!-- Error -->
-    <div th:if="${param.error}" class="alert-danger" role="alert">
+    <div th:if="${param.error}" class="alert alert-danger" role="alert">
         Invalid username and password.
         <br>
-        Hint: Username: risotto, Password: password
-
+        Hint:
+        <br>
+        Username: risotto
+        <br>
+        Password: password
     </div>
 
 <!-- Logout -->
-    <div th:if="${param.logout}" class="alert-success" role="alert">
+    <div th:if="${param.logout}" class="alert alert-success" role="alert">
         You have been logged out.
     </div>
 

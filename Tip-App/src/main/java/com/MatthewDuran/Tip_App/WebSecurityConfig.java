@@ -26,8 +26,14 @@ public class WebSecurityConfig {
                         .defaultSuccessUrl("/calculator", true) // redirect after successful login
                         .permitAll()
                 )
-                .logout((logout) -> logout.permitAll());
-
+                .logout(logout -> logout
+                        .logoutUrl("/logout")                 // optional, default is /logout
+                        .logoutSuccessUrl("/login?logout")    // redirects with ?logout after logout
+                        .invalidateHttpSession(true)          // clear session
+                        .clearAuthentication(true)            // clear auth
+                        .deleteCookies("JSESSIONID")          // remove session cookie
+                        .permitAll()
+                );
         return http.build();
     }
 

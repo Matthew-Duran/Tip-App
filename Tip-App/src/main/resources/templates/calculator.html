@@ -17,28 +17,32 @@
             <div class="mb-3">
                 <label for="tipPool" class="form-label">Total Tip Pool ($)</label>
                 <input type="number" id="tipPool" name="tipPool"
-                       class="form-control" min="0" value="0" required>
+                       class="form-control" min="0" value="" required>
             </div>
 
             <div class="mb-3">
                 <label for="waiters" class="form-label">Number Of Waiters</label>
                 <input type="number" id="waiters" name="waiters"
-                       class="form-control" min="0" value="0" required>
+                       class="form-control" min="0" value="" required>
             </div>
 
             <div class="mb-3">
                 <label for="foodRunners" class="form-label">Number Of Food Runners</label>
                 <input type="number" id="foodRunners" name="foodRunners"
-                       class="form-control" min="0" value="0" required>
+                       class="form-control" min="0" value="" required>
             </div>
 
             <div class="mb-3">
                 <label for="busboys" class="form-label">Number Of Busboys</label>
                 <input type="number" id="busboys" name="busboys"
-                       class="form-control" min="0" value="0" required>
+                       class="form-control" min="0" value="" required>
             </div>
 
             <button type="submit" class="btn btn-primary w-100">Calculate Tips</button>
+        </form>
+        <br>
+        <form th:action="@{/logout}" method="post">
+        <button type="submit" class="btn btn-danger w-100">Log Out</button>
         </form>
     </div>
 </div>
